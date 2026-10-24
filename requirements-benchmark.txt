@@ -1,0 +1,7 @@
+-r requirements.txt
+monai
+timm
+einops
+transformers==4.52.4
+segmentation-models-pytorch
+ultralytics

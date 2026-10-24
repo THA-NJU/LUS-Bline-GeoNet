@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+third_party/
+data/
+outputs/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+*.npz
+*.npy
+.env*

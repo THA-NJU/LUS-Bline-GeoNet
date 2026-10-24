@@ -1,0 +1,771 @@
+{
+  "monai_unet": {
+    "model": "monai_unet",
+    "family": "CNN",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "monai_vnet": {
+    "model": "monai_vnet",
+    "family": "CNN",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "monai_attention_unet": {
+    "model": "monai_attention_unet",
+    "family": "CNN",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "monai_unetplusplus": {
+    "model": "monai_unetplusplus",
+    "family": "CNN",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "mednext": {
+    "model": "mednext",
+    "family": "CNN",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "nnunet_2d": {
+    "model": "nnunet_2d",
+    "family": "CNN",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "aau_net": {
+    "model": "aau_net",
+    "family": "CNN",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "fpn_resnet34": {
+    "model": "fpn_resnet34",
+    "family": "CNN",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "deeplabv3plus_resnet34": {
+    "model": "deeplabv3plus_resnet34",
+    "family": "CNN",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "lus_ultrasound_1m_v1",
+      "normalization_enabled": true,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": [
+        0.15732,
+        0.15732,
+        0.15732
+      ],
+      "std": [
+        0.16688,
+        0.16688,
+        0.16688
+      ],
+      "statistics_source": "approximately_one_million_unlabeled_ultrasound_images"
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "swinunet": {
+    "model": "swinunet",
+    "family": "Transformer",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "nnformer_2d": {
+    "model": "nnformer_2d",
+    "family": "Transformer",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "pvtb2_emcad": {
+    "model": "pvtb2_emcad",
+    "family": "Transformer",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "sepnet": {
+    "model": "sepnet",
+    "family": "Transformer",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "nulite": {
+    "model": "nulite",
+    "family": "Transformer",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "segformer_b2": {
+    "model": "segformer_b2",
+    "family": "Transformer",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization_enabled": true,
+      "mean": [
+        0.10222768713985789,
+        0.10222768713985789,
+        0.10222768713985789
+      ],
+      "std": [
+        0.1449912555111227,
+        0.1449912555111227,
+        0.1449912555111227
+      ]
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "mamba_unet": {
+    "model": "mamba_unet",
+    "family": "Mamba",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "vm_unet_v2": {
+    "model": "vm_unet_v2",
+    "family": "Mamba",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "nnmamba_2d": {
+    "model": "nnmamba_2d",
+    "family": "Mamba",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "swin_umamba": {
+    "model": "swin_umamba",
+    "family": "Mamba",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "u_rwkv": {
+    "model": "u_rwkv",
+    "family": "RWKV",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "rwkv_unet": {
+    "model": "rwkv_unet",
+    "family": "RWKV",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "sam2": {
+    "model": "sam2",
+    "family": "Foundation",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": true,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "medsam": {
+    "model": "medsam",
+    "family": "Foundation",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "samus": {
+    "model": "samus",
+    "family": "Foundation",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "sam3": {
+    "model": "sam3",
+    "family": "Foundation",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": true,
+      "mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "std": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "usfm": {
+    "model": "usfm",
+    "family": "Foundation",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": true,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "yolo26s-sem": {
+    "model": "yolo26s-sem",
+    "family": "Yolo",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [
+      "torch.nn.modules.activation.SiLU",
+      "ultralytics.nn.modules.block.C3k",
+      "ultralytics.nn.modules.block.SPPF",
+      "torch.nn.modules.container.ModuleList",
+      "ultralytics.nn.modules.head.SemanticSegment",
+      "torch.nn.modules.linear.Identity",
+      "ultralytics.nn.modules.block.C2PSA",
+      "ultralytics.nn.modules.conv.Concat",
+      "torch.nn.modules.upsampling.Upsample",
+      "ultralytics.nn.modules.block.C3k2",
+      "ultralytics.nn.modules.conv.Conv",
+      "torch.nn.modules.conv.Conv2d",
+      "ultralytics.nn.modules.block.Attention",
+      "ultralytics.nn.modules.block.PSABlock",
+      "torch.nn.modules.batchnorm.BatchNorm2d",
+      "ultralytics.nn.tasks.SemanticSegmentationModel",
+      "ultralytics.nn.modules.block.Bottleneck",
+      "torch.nn.modules.container.Sequential",
+      "torch.nn.modules.pooling.MaxPool2d"
+    ],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "yolo26m-sem": {
+    "model": "yolo26m-sem",
+    "family": "Yolo",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [
+      "torch.nn.modules.activation.SiLU",
+      "ultralytics.nn.modules.block.C3k",
+      "ultralytics.nn.modules.block.SPPF",
+      "torch.nn.modules.container.ModuleList",
+      "ultralytics.nn.modules.head.SemanticSegment",
+      "torch.nn.modules.linear.Identity",
+      "ultralytics.nn.modules.block.C2PSA",
+      "ultralytics.nn.modules.conv.Concat",
+      "torch.nn.modules.upsampling.Upsample",
+      "ultralytics.nn.modules.block.C3k2",
+      "ultralytics.nn.modules.conv.Conv",
+      "torch.nn.modules.conv.Conv2d",
+      "ultralytics.nn.modules.block.Attention",
+      "ultralytics.nn.modules.block.PSABlock",
+      "torch.nn.modules.batchnorm.BatchNorm2d",
+      "ultralytics.nn.tasks.SemanticSegmentationModel",
+      "ultralytics.nn.modules.block.Bottleneck",
+      "torch.nn.modules.container.Sequential",
+      "torch.nn.modules.pooling.MaxPool2d"
+    ],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "yolo26l-sem": {
+    "model": "yolo26l-sem",
+    "family": "Yolo",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [
+      "torch.nn.modules.activation.SiLU",
+      "ultralytics.nn.modules.block.C3k",
+      "ultralytics.nn.modules.block.SPPF",
+      "torch.nn.modules.container.ModuleList",
+      "ultralytics.nn.modules.head.SemanticSegment",
+      "torch.nn.modules.linear.Identity",
+      "ultralytics.nn.modules.block.C2PSA",
+      "ultralytics.nn.modules.conv.Concat",
+      "torch.nn.modules.upsampling.Upsample",
+      "ultralytics.nn.modules.block.C3k2",
+      "ultralytics.nn.modules.conv.Conv",
+      "torch.nn.modules.conv.Conv2d",
+      "ultralytics.nn.modules.block.Attention",
+      "ultralytics.nn.modules.block.PSABlock",
+      "torch.nn.modules.batchnorm.BatchNorm2d",
+      "ultralytics.nn.tasks.SemanticSegmentationModel",
+      "ultralytics.nn.modules.block.Bottleneck",
+      "torch.nn.modules.container.Sequential",
+      "torch.nn.modules.pooling.MaxPool2d"
+    ],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "yolo11s-seg": {
+    "model": "yolo11s-seg",
+    "family": "Yolo",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [
+      "torch.nn.modules.activation.SiLU",
+      "ultralytics.nn.modules.block.C3k",
+      "ultralytics.nn.modules.block.SPPF",
+      "torch.nn.modules.container.ModuleList",
+      "torch.nn.modules.linear.Identity",
+      "torch.nn.modules.conv.ConvTranspose2d",
+      "ultralytics.nn.modules.block.C2PSA",
+      "ultralytics.nn.modules.conv.Concat",
+      "ultralytics.nn.modules.block.DFL",
+      "ultralytics.nn.modules.head.Segment",
+      "torch.nn.modules.upsampling.Upsample",
+      "ultralytics.nn.modules.block.C3k2",
+      "ultralytics.nn.modules.conv.Conv",
+      "torch.nn.modules.conv.Conv2d",
+      "ultralytics.nn.modules.block.Attention",
+      "ultralytics.nn.modules.block.PSABlock",
+      "torch.nn.modules.batchnorm.BatchNorm2d",
+      "ultralytics.nn.modules.block.Bottleneck",
+      "ultralytics.nn.modules.conv.DWConv",
+      "ultralytics.nn.tasks.SegmentationModel",
+      "torch.nn.modules.container.Sequential",
+      "torch.nn.modules.pooling.MaxPool2d",
+      "ultralytics.nn.modules.block.Proto"
+    ],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "yolo11m-seg": {
+    "model": "yolo11m-seg",
+    "family": "Yolo",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [
+      "torch.nn.modules.activation.SiLU",
+      "ultralytics.nn.modules.block.C3k",
+      "ultralytics.nn.modules.block.SPPF",
+      "torch.nn.modules.container.ModuleList",
+      "torch.nn.modules.linear.Identity",
+      "torch.nn.modules.conv.ConvTranspose2d",
+      "ultralytics.nn.modules.block.C2PSA",
+      "ultralytics.nn.modules.conv.Concat",
+      "ultralytics.nn.modules.block.DFL",
+      "ultralytics.nn.modules.head.Segment",
+      "torch.nn.modules.upsampling.Upsample",
+      "ultralytics.nn.modules.block.C3k2",
+      "ultralytics.nn.modules.conv.Conv",
+      "torch.nn.modules.conv.Conv2d",
+      "ultralytics.nn.modules.block.Attention",
+      "ultralytics.nn.modules.block.PSABlock",
+      "torch.nn.modules.batchnorm.BatchNorm2d",
+      "ultralytics.nn.modules.block.Bottleneck",
+      "ultralytics.nn.modules.conv.DWConv",
+      "ultralytics.nn.tasks.SegmentationModel",
+      "torch.nn.modules.container.Sequential",
+      "torch.nn.modules.pooling.MaxPool2d",
+      "ultralytics.nn.modules.block.Proto"
+    ],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "yolo11l-seg": {
+    "model": "yolo11l-seg",
+    "family": "Yolo",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization_enabled": false,
+      "mean": null,
+      "std": null
+    },
+    "safe_globals": [
+      "torch.nn.modules.activation.SiLU",
+      "ultralytics.nn.modules.block.C3k",
+      "ultralytics.nn.modules.block.SPPF",
+      "torch.nn.modules.container.ModuleList",
+      "torch.nn.modules.linear.Identity",
+      "torch.nn.modules.conv.ConvTranspose2d",
+      "ultralytics.nn.modules.block.C2PSA",
+      "ultralytics.nn.modules.conv.Concat",
+      "ultralytics.nn.modules.block.DFL",
+      "ultralytics.nn.modules.head.Segment",
+      "torch.nn.modules.upsampling.Upsample",
+      "ultralytics.nn.modules.block.C3k2",
+      "ultralytics.nn.modules.conv.Conv",
+      "torch.nn.modules.conv.Conv2d",
+      "ultralytics.nn.modules.block.Attention",
+      "ultralytics.nn.modules.block.PSABlock",
+      "torch.nn.modules.batchnorm.BatchNorm2d",
+      "ultralytics.nn.modules.block.Bottleneck",
+      "ultralytics.nn.modules.conv.DWConv",
+      "ultralytics.nn.tasks.SegmentationModel",
+      "torch.nn.modules.container.Sequential",
+      "torch.nn.modules.pooling.MaxPool2d",
+      "ultralytics.nn.modules.block.Proto"
+    ],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "rolling_unet": {
+    "model": "rolling_unet",
+    "family": "Other",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "ukan": {
+    "model": "ukan",
+    "family": "Other",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "xlstm_unet_bot": {
+    "model": "xlstm_unet_bot",
+    "family": "Other",
+    "precision": "fp32",
+    "preprocessing": {
+      "normalization": "model_native",
+      "normalization_enabled": false,
+      "image_scale": "uint8_to_float32_div_255",
+      "mean": null,
+      "std": null,
+      "statistics_source": null
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  },
+  "s2denet": {
+    "model": "s2denet",
+    "family": "Other",
+    "precision": "bf16",
+    "preprocessing": {
+      "normalization_enabled": true,
+      "mean": [
+        0.100638,
+        0.100638,
+        0.100638
+      ],
+      "std": [
+        0.145868,
+        0.145868,
+        0.145868
+      ]
+    },
+    "safe_globals": [],
+    "instance_conf": 0.25,
+    "instance_iou": 0.7
+  }
+}
