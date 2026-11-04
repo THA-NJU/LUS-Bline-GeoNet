@@ -83,3 +83,7 @@ Each run produces **59 aggregate metrics**, a complete `test_cases.csv`, lesion-
 | `metrics/` | Pixel, boundary, topology and lesion metrics |
 | `configs/` | B-GeoNet training settings |
 | `tests/` | Raster, Rolling operation and metric checks |
+
+## Cross-model geometry experiments
+
+[Training code and RTX 4090 results](experiments/cross_model_geometry/README.md) for VM-UNet, S2DENet and ResNet34-FPN with geometry branches.
