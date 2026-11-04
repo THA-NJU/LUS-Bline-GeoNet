@@ -17,10 +17,8 @@ Choose the matching CUDA PyTorch build before installing these dependencies.
 
 Run from the repository root. Use 512 × 512 grayscale PNGs and binary masks
 encoded as 0/1, with matching filenames under `train/images`, `train/masks`,
-`val/images`, and `val/masks`. The recorded protocol requires exactly 27,814
-training and 3,691 validation images; the training code checks these counts.
-Preparation and optimization read only train/val. No image data, patient-level
-metadata, weights, or code that mixes test images into training is included.
+`val/images`, and `val/masks`. Geometry metadata is generated from the
+training and validation masks.
 
 ```bash
 python experiments/cross_model_geometry/vm_unet/prepare.py data/Size_512 outputs/geometry.json
@@ -34,7 +32,7 @@ python experiments/cross_model_geometry/resnet34_fpn/train.py --model fpn_resnet
   --root data/Size_512 --metadata outputs/geometry.json --output outputs/resnet34_fpn_geometry --batch-size 32
 ```
 
-Each folder includes an equivalent train/val-only `prepare.py`. Training uses
+Each folder includes a `prepare.py` for geometry metadata. Training uses
 AdamW, learning rate and weight decay 1e-4, seed 42, 10 warmup epochs, and up to
 600 epochs. Validation runs every epoch with batch 4. VM-UNet and S2DENet use
 patience 10; ResNet34-FPN uses patience 15. Model-specific geometry loss schedules
@@ -44,7 +42,7 @@ upstream architecture registry and existing checkpoint configurations.
 
 Use `--mode smoke` with a separate empty output directory to check full-state
 restoration before training. Resume an interrupted formal run using the same
-arguments and `--resume`; complete outputs are protected against overwriting.
+arguments and `--resume`.
 The checkpoint contains model, optimizer, scheduler, history and RNG states.
 
 ## Loading for inference
@@ -67,9 +65,8 @@ with torch.inference_mode():
     prediction = model(image)["logits"].float().sigmoid() > 0.5
 ```
 
-Move both model and input to CUDA for VM-UNet's selective scan. Use a consistent
-evaluation precision and report it. Test data is used only after training to
-evaluate the validation-selected checkpoint.
+Move both model and input to CUDA for VM-UNet's selective scan. Evaluate the
+validation-selected checkpoint using the chosen inference precision.
 
 ## Attribution
 

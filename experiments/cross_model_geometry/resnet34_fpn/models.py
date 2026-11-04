@@ -3,7 +3,7 @@
 The geometric query head, renderer and residual refinement are inherited from
 the unchanged geometry.GeometryBase. Native two-class logits are preserved;
 only their exactly equivalent foreground-minus-background logit is exposed.
-No constructor in this module loads a checkpoint or downloads weights.
+Constructors initialize model parameters randomly.
 """
 from __future__ import annotations
 
@@ -47,8 +47,7 @@ def _build_native(name: str) -> tuple[nn.Module, int]:
     if name == "segformer_b2":
         from transformers import SegformerConfig, SegformerForSemanticSegmentation
 
-        # Explicit MiT-B2, rather than the B0 defaults. Constructor only: never
-        # from_pretrained, even if a pretrained configuration exists locally.
+        # MiT-B2 configuration with random parameter initialization.
         config = SegformerConfig(
             num_channels=3,
             num_encoder_blocks=4,

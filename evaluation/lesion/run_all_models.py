@@ -230,9 +230,7 @@ def command_for(spec, size, checkpoint, repo, data_root, weights_root,
         # architecture and preprocessing still live in the corresponding base
         # script. The rich evaluator must import that base script directly.
         training = repo / "experiments/foundation" / f"train_{spec.model}_512.py"
-        # The original 512 scripts defaulted to min_mask_pixels=100, which is
-        # why their historical case CSVs contained only 1464/1549 images.
-        # Lesion evaluation must infer every retained test image.
+        # Evaluate the paired test images with min_mask_pixels=0.
         forwarded = ["--data-root", str(data), "--resume", str(checkpoint),
                      "--min-mask-pixels", "0"]
         return base + [str(repo / "evaluation/foundation/evaluate_sam_checkpoints.py"),

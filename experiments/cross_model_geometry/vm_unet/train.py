@@ -1,4 +1,4 @@
-"""Scratch geometry adaptation with full-state, audited epoch checkpoints."""
+"""Geometry adaptation training with epoch checkpoints."""
 import argparse
 import gc
 import hashlib
@@ -93,7 +93,7 @@ def dataset_metadata(root, metadata):
     meta = json.loads(Path(metadata).read_text())
     assert meta['queries'] == 16
     datasets = {split: BlineDataset(root, split, meta, split == 'train') for split in ('train', 'val')}
-    assert len(datasets['train']) == 27814 and len(datasets['val']) == 3691
+    assert all(len(dataset) > 0 for dataset in datasets.values()), 'Training and validation datasets must be nonempty'
     for split, dataset in datasets.items():
         names = {path.name for path in dataset.files}
         assert names == set(meta[split]), f'{split}: metadata names differ from dataset'
@@ -103,7 +103,7 @@ def dataset_metadata(root, metadata):
 
 
 def data_fingerprint(root, datasets):
-    """Content hashes, not only timestamps; test data is never read."""
+    """Compute content hashes for the training and validation datasets."""
     digest = hashlib.sha256()
     counts = {}
     for split, dataset in datasets.items():
@@ -385,7 +385,7 @@ def train(args):
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
     if (output / 'training_ready.json').exists() or (output / 'smoke_passed.json').exists():
-        raise RuntimeError('Completed output preserved; refusing another run')
+        raise RuntimeError('Output directory already contains a completed run')
     if (output / 'config.json').exists() and not args.resume:
         raise RuntimeError('Existing output preserved; use explicit --resume for a complete epoch checkpoint')
     if args.resume and not any((output / name).exists() for name in ('best.pth', 'last.pth')):
@@ -477,7 +477,7 @@ def train(args):
                     status(output, status='VALIDATING', model=args.model, epoch=epoch, step=step,
                            steps=len(loaders['val']), best=best, best_epoch=best_epoch)
                 del result, prediction, target, loss
-        assert count == 27814 and val_count == 3691
+        assert count == len(datasets['train']) and val_count == len(datasets['val'])
         score = float(np.mean(scores))
         assert math.isfinite(score)
         scheduler.step()

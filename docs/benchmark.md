@@ -83,6 +83,6 @@ python -m benchmarks.evaluate --model monai_unet \
 
 For the Manual_test image track, run the same command with its image directory and the corresponding masks, using a separate output directory. Model-specific normalization and native input size come from the registry.
 
-SAM adapters use full-image fixed-box prompts. YOLO11 uses native instance confidence 0.25 and NMS IoU 0.70; YOLO26 uses semantic foreground probabilities. USFM retains its three-class output and evaluates foreground channel 1. The benchmark's historical RWKV-UNet and USFM checkpoints retain their original training protocols; the other checkpoint provenance should be recorded alongside each run. The registry does not substitute one model's trained weights for another.
+SAM adapters use full-image fixed-box prompts. YOLO11 uses native instance confidence 0.25 and NMS IoU 0.70; YOLO26 uses semantic foreground probabilities. USFM retains its three-class output and evaluates foreground channel 1. The benchmark's historical RWKV-UNet and USFM checkpoints retain their original training protocols.
 
 The evaluator uses `weights_only=True` checkpoint loading. YOLO checkpoint classes are explicitly restricted to registered Torch/Ultralytics neural-network types. External architectures remain under their upstream licenses.
