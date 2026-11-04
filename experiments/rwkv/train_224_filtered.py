@@ -330,12 +330,12 @@ def load_base512_module(
 
     if not path.is_file():
         raise FileNotFoundError(
-            "The verified Size_512 RWKV v3 script is required so that the "
+            "The verified Size_512 RWKV script is required so that the "
             "Size_224 run reuses exactly the same U-RWKV correction and "
             f"non-finite-gradient recovery logic. Missing: {path}"
         )
 
-    module_name = "_rwkv_size512_v3_base"
+    module_name = "_rwkv_size512_base"
     spec = importlib.util.spec_from_file_location(module_name, path)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Cannot import base script: {path}")
@@ -421,7 +421,7 @@ class Filtered224Dataset(Dataset):
         with Image.open(mask_path) as f:
             mask = f.convert("L")
 
-        # Reuse the exact augmentation from the verified Size_512 v3 script.
+        # Reuse the exact augmentation from the verified Size_512 script.
         if self.augment:
             image, mask = self.base.ConsolidationDataset.augment_pair(
                 image, mask
@@ -429,7 +429,7 @@ class Filtered224Dataset(Dataset):
 
         image_arr = np.asarray(image, dtype=np.float32) / 255.0
 
-        # Match the Size_512 v3 noise augmentation.
+        # Match the Size_512 noise augmentation.
         if self.augment and random.random() < 0.15:
             noise = np.random.normal(
                 0.0, 0.02, image_arr.shape

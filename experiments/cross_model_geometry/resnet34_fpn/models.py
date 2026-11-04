@@ -1,7 +1,7 @@
 """V6 geometry adapters for three randomly initialized native backbones.
 
 The geometric query head, renderer and residual refinement are inherited from
-the unchanged model_v41.GeometryBase. Native two-class logits are preserved;
+the unchanged geometry.GeometryBase. Native two-class logits are preserved;
 only their exactly equivalent foreground-minus-background logit is exposed.
 No constructor in this module loads a checkpoint or downloads weights.
 """
@@ -14,7 +14,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from model_v41 import RibbonNet as GeometryBase, ribbon
+from geometry import RibbonNet as GeometryBase, ribbon
 
 
 MODEL_NAMES = ("vm_unet_v2", "segformer_b2", "fpn_resnet34")
@@ -30,9 +30,9 @@ PREPROCESSING = {
 
 def _build_native(name: str) -> tuple[nn.Module, int]:
     if name == "vm_unet_v2":
-        from vendor.vm_unet_v2 import VMUNetV2
+        from vendor.vm_unet import VMUNet
 
-        native = VMUNetV2(
+        native = VMUNet(
             in_channels=3,
             num_classes=2,
             img_size=512,

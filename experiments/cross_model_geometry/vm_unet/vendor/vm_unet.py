@@ -117,10 +117,10 @@ class SDI(nn.Module):
 
 
 # ---------------------------------------------------------------------------
-# VMUNetV2 – full 模型 / VMUNetV2 – full model
+# VMUNet – full 模型 / VMUNet – full model
 # ---------------------------------------------------------------------------
 
-class VMUNetV2(nn.Module):
+class VMUNet(nn.Module):
     """VM-UNet-V2: Vision Mamba UNet V2.
 
     Faithful to https://github.com/nobodyplayer1/VM-UNetV2
@@ -152,8 +152,8 @@ class VMUNetV2(nn.Module):
         dims = [embed_dim * (2 ** i) for i in range(len(depths))]
 
         # ---- 编码器 / ---- Encoder: VSSM backbone ----
-        from .vm_unet_v2_encoder import VMUNetV2Encoder
-        self.encoder = VMUNetV2Encoder(
+        from .vm_unet_encoder import VMUNetEncoder
+        self.encoder = VMUNetEncoder(
             in_channels=in_channels, img_size=img_size,
             embed_dim=embed_dim, depths=depths,
             drop_path_rate=drop_path_rate,

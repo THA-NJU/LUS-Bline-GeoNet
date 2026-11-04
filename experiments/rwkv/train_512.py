@@ -671,7 +671,7 @@ def require_wkv_cuda(model_name: str) -> None:
     if CUDA_HOME is None or shutil.which("nvcc") is None:
         raise RuntimeError(
             "RWKV requires a local CUDA toolkit/NVCC. "
-            "Run check_rwkv_bench_env_v1.py first."
+            "Verify the RWKV CUDA extension environment first."
         )
     t_max = int(MODEL_SPECS[model_name]["kernel_tmax"])
     print(f"Loading WKV CUDA kernel (Tmax={t_max}) ...")
@@ -1360,7 +1360,7 @@ def train_model(
             if checkpoint_patch_id != u_rwkv_patch_id:
                 raise RuntimeError(
                     "Refusing to resume U-RWKV from a checkpoint created "
-                    "before the reference-alignment patch. Start a new v3 "
+                    "before the reference-alignment patch. Start a new "
                     "output directory and train from epoch 1. "
                     f"checkpoint_patch={checkpoint_patch_id!r}, "
                     f"required_patch={u_rwkv_patch_id!r}"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""FINAL_PROTOCOL_V2 — corrected Size-224 benchmark training script.
+"""FINAL_PROTOCOL — corrected Size-224 benchmark training script.
 
 Protocol identity: epochs=600, patience=15, warmup=10, seed=42,
 batch=16, learning rate=1e-4, fixed semantic threshold=0.5, and every epoch

@@ -1,7 +1,7 @@
 import json,sys,hashlib,cv2,numpy as np
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
-from data_v4 import targets
+from data import targets
 def one(p):
  p=Path(p);m=cv2.imread(str(p),0);assert m.shape==(512,512) and set(np.unique(m))<={0,1};t,r=targets(m);assert len(t)<=16
  return p.name,dict(targets=t,reliable=r,mask_sha256=hashlib.sha256(p.read_bytes()).hexdigest())

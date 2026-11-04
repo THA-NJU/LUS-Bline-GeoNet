@@ -89,10 +89,10 @@ def check_nested_equal(a, b):
 
 
 def dataset_metadata(root, metadata):
-    from data_v4 import BlineV4
+    from data import BlineDataset
     meta = json.loads(Path(metadata).read_text())
     assert meta['queries'] == 16
-    datasets = {split: BlineV4(root, split, meta, split == 'train') for split in ('train', 'val')}
+    datasets = {split: BlineDataset(root, split, meta, split == 'train') for split in ('train', 'val')}
     assert len(datasets['train']) == 27814 and len(datasets['val']) == 3691
     for split, dataset in datasets.items():
         names = {path.name for path in dataset.files}
@@ -143,7 +143,7 @@ def make_model_optimizer(model_name):
 
 
 def forward_loss(model, batch):
-    from model_v41 import losses
+    from geometry import losses
     x, y = [item.cuda(non_blocking=True) for item in batch[:2]]
     with torch.autocast('cuda', dtype=torch.bfloat16):
         result = model(x)
@@ -172,7 +172,7 @@ def training_step(model, optimizer, batch):
 
 def worst_batch(dataset, metadata, batch_size):
     """Use real train images with the largest valid instance counts."""
-    from data_v4 import collate
+    from data import collate
     assert 0 < batch_size <= len(dataset), 'Candidate exceeds available unique training images'
     ranked = sorted(range(len(dataset)),
                     key=lambda i: (-len(metadata['train'][dataset.files[i].name]['targets']),
@@ -314,7 +314,7 @@ def status(output, **fields):
 
 
 def smoke(args, config, model, optimizer, scheduler, datasets, metadata):
-    from data_v4 import collate
+    from data import collate
     output = Path(args.output)
     batch, selected = worst_batch(datasets['train'], metadata, args.batch_size)
     model.train()
@@ -373,7 +373,7 @@ def smoke(args, config, model, optimizer, scheduler, datasets, metadata):
 
 
 def train(args):
-    from data_v4 import collate
+    from data import collate
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
     if (output / 'training_ready.json').exists() or (output / 'smoke_passed.json').exists():

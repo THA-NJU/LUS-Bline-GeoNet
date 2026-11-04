@@ -5,24 +5,6 @@ ResNet34-FPN. These RTX 4090 experiments train the backbone and the original
 16-query, six-parameter geometry branch jointly from random initialization.
 The geometry renderer and residual refinement are retained.
 
-## Results
-
-Validation-selected checkpoints; V6_Test contains 2,716 images. Values below
-are percentages. SD is between-image population SD, not variation across seeds.
-Lesion F1 uses pooled one-to-one matching at strict IoU > 0.2. No postprocessing.
-
-| Model | Parameters | Best epoch | Validation Dice | Test Dice ± SD | Test IoU ± SD | Lesion F1 |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| VM-UNet + geometry | 9,581,406 | 15 | 64.44 | 66.85 ± 17.43 | 52.53 ± 18.02 | 67.38 |
-| S2DENet + geometry | 996,734 | 73 | 61.41 | 65.52 ± 17.65 | 51.08 ± 18.23 | 55.87 |
-| ResNet34-FPN + geometry | 24,107,690 | 23 | 64.35 | 67.02 ± 17.56 | 52.76 ± 18.18 | 71.25 |
-
-Full precision summary: [results.json](results.json). Per-model training curves
-and settings are in `history.json` and `training_config.json`. Each model also
-includes all 59 recorded aggregate V6_Test metrics in `test_metrics.json`, with
-units and inference precision. Timing values are specific to the recorded environment. These are single-seed
-results from selected experimental configurations, not a multi-seed estimate.
-
 ## Environment
 
 The recorded environment used Python with PyTorch 2.6.0 / CUDA 11.8, NumPy 1.26.4
@@ -57,8 +39,8 @@ AdamW, learning rate and weight decay 1e-4, seed 42, 10 warmup epochs, and up to
 600 epochs. Validation runs every epoch with batch 4. VM-UNet and S2DENet use
 patience 10; ResNet34-FPN uses patience 15. Model-specific geometry loss schedules
 and residual coefficients are preserved in the respective code/configuration.
-VM-UNet's native backbone is VM-UNet V2; that architecture name is retained in
-imports and checkpoint keys.
+The `vm_unet_v2` model identifier is retained for compatibility with the
+upstream architecture registry and existing checkpoint configurations.
 
 Use `--mode smoke` with a separate empty output directory to check full-state
 restoration before training. Resume an interrupted formal run using the same
@@ -95,13 +77,3 @@ VM-UNet implementation is adapted from APRIL-MedSeg; its license is retained at
 `vm_unet/vendor/LICENSE.april_medseg`. S2DENet retains its source headers and MIT
 license at `s2denet/vendor/S2DENet_LICENSE`. ResNet34-FPN is instantiated through
 segmentation-models-pytorch with `encoder_weights=None`.
-
-## Release checks
-
-All supplied architecture, data and loss modules were checked against the source
-hashes stored with the completed runs. Training functions are unchanged; the CLI
-is restricted to the corresponding model in each folder. All three entry points
-pass Python syntax and CLI checks. VM-UNet and S2DENet also passed fresh CPU strict
-loading of their completed checkpoints and parameter-count checks. ResNet34-FPN
-retains the recorded successful evaluation; its runtime was not re-executed in
-the packaging environment. GPU training and evaluation were not rerun for this release.

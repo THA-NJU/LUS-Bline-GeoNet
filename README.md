@@ -86,4 +86,4 @@ Each run produces **59 aggregate metrics**, a complete `test_cases.csv`, lesion-
 
 ## Cross-model geometry experiments
 
-[Training code and RTX 4090 results](experiments/cross_model_geometry/README.md) for VM-UNet, S2DENet and ResNet34-FPN with geometry branches.
+[Cross-model geometry training code](experiments/cross_model_geometry/README.md) for VM-UNet, S2DENet and ResNet34-FPN with geometry branches.

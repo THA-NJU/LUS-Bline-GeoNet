@@ -72,7 +72,7 @@ class _VSSLayer(nn.Module):
         return pre_down, x
 
 
-class VMUNetV2Encoder(nn.Module):
+class VMUNetEncoder(nn.Module):
     """VM-UNet-V2 Encoder (VSSM backbone).
         VM-UNet-V2 编码器。
 

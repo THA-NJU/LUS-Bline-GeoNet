@@ -26,7 +26,7 @@ def targets(mask):
   if iou<.65:reliable=False;continue
   out.append(dict(component=k,params=(np.r_[p0,p1,w0,w1]/511).tolist(),fit_iou=float(iou)))
  return out,reliable
-class BlineV4(Dataset):
+class BlineDataset(Dataset):
  def __init__(self,root,split,meta,augment=False):self.root=Path(root)/split;self.files=sorted((self.root/'images').glob('*.png'));self.meta=meta[split];self.augment=augment
  def __len__(self):return len(self.files)
  def __getitem__(self,i):

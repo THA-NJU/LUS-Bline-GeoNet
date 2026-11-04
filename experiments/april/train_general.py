@@ -72,7 +72,7 @@ DATA_ROOTS = {
 RUN_SIZES = [512, 224]
 
 # 每次运行默认创建新的时间戳目录，避免覆盖。需要断点续训同一次实验时，
-# 手动固定 RUN_ID，例如 RUN_ID = "20260720_autodl_easy_v1"。
+# 手动固定 RUN_ID，例如 RUN_ID = "20260720_autodl_easy"。
 RUN_ID = os.environ.get("RUN_ID") or datetime.now().strftime("%Y%m%d_%H%M%S")
 OUTPUT_BASE = PROJECT_ROOT / "output" / f"autodl_easy_models_benchmark_{RUN_ID}"
 # The following globals are set per task by set_task_context().

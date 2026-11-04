@@ -6,7 +6,7 @@ from torch import nn
 from torch.nn import functional as F
 sys.path.insert(0,str(Path(__file__).parent/'vendor'))
 from s2denet import S2DENet
-from model_v41 import RibbonNet as GeometryBase, ribbon
+from geometry import RibbonNet as GeometryBase, ribbon
 MODEL_NAMES=('s2denet',)
 class GeometryAdapter(GeometryBase):
     def __init__(self,name='s2denet',queries=16):
